@@ -19,17 +19,19 @@
         <div id="main-aplication">
             <div id="left">
                 <div id="binarioDecimal">
+                    <h3>Transformador Binario/Decimal</h3>
                     <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario">
                     <label for="rojo">Decimal a Binario</label>
                     <input type="radio" id="binarioDecimal" name="transformador" value="binarioDecimal">
                     <label for="azul">Binario a Decimal</label><br>
                     <input id="inputTransformador" type="number" name="transformador"><br>
                     <button onclick="transformar()">Apretar</button>
-                    <p id="prueba2"></p>
+                    <strong><p id="respuestaTransformador"></p></strong>
                 </div>
                 <div id="clasesDeIp">
+                    <h3>Clases de IP</h3>
                     <ul>
-                        <li>Clase A</li>
+                        <li>Clase A: 0.0.0.0 a 127.255.255.255 Mascara 255.0.0.0</li>
                         <li>Clase B</li>
                         <li>Clase C</li>
                         <li>Clase D</li>

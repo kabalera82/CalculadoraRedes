@@ -44,6 +44,8 @@ h2{
     gap: 50px;
 }
 #left{
+    background-color: #f3f3f3;
+    color: #000000;
     flex-grow: 1;
     border: 2px solid;
     border-radius: 15px;
@@ -57,6 +59,8 @@ ul{
 }
 
 #redes{
+    background-color: #f3f3f3;
+    color: #000000;
     flex-grow: 10;
     border: 2px solid;
     border-radius: 15px;
@@ -72,4 +76,15 @@ strong{
 }
 #red {
     color:#FF8D5C
+}
+
+#resultadoTransformador{
+    border: 2px solid #000000;
+    border-radius: 20px;
+    height: 40px;
+    background-color: #E16162;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
