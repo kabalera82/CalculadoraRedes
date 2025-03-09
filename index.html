@@ -17,27 +17,15 @@
             <p>En función de la IP se dividen en distintas clases que sirven para identificar su <strong>máscara de red.</strong> La máscara de red sirve para identificar qué parte de la IP pertenece a <strong id="red">red</strong> y qué parte a <strong id="host">host.</strong></p>
         </div>
         <div id="main-aplication">
-            <div id="left">
-                <div id="binarioDecimal">
-                    <h3>Transformador Binario/Decimal</h3>
-                    <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario">
-                    <label for="rojo">Decimal a Binario</label>
-                    <input type="radio" id="binarioDecimal" name="transformador" value="binarioDecimal">
-                    <label for="azul">Binario a Decimal</label><br>
-                    <input id="inputTransformador" type="number" name="transformador"><br>
-                    <button onclick="transformar()">Apretar</button>
-                    <strong><p id="respuestaTransformador"></p></strong>
-                </div>
-                <div id="clasesDeIp">
-                    <h3>Clases de IP</h3>
-                    <ul>
-                        <li>Clase A: 0.0.0.0 a 127.255.255.255 Mascara 255.0.0.0</li>
-                        <li>Clase B</li>
-                        <li>Clase C</li>
-                        <li>Clase D</li>
-                        <li>Clase E</li>
-                    </ul>
-                </div>
+            <div id="binarioDecimal">
+                <h3>Transformador Binario/Decimal</h3>
+                <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario">
+                <label for="rojo">Decimal a Binario</label>
+                <input type="radio" id="binarioDecimal" name="transformador" value="binarioDecimal">
+                <label for="azul">Binario a Decimal</label><br>
+                <input id="inputTransformador" type="number" name="transformador"><br>
+                <button onclick="transformar()">Apretar</button>
+                <strong><p id="resultadoTransformador">Ingresa un número</p></strong>
             </div>
             <div id="redes">
                 <label>IP: </label>

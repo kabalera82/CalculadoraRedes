@@ -19,7 +19,7 @@ function transformar() {
             binarioADecimal();
         break;
         case null:
-            document.getElementById("respuestaTransformador").innerText = "Debes seleccionar una opción";
+            document.getElementById("resultadoTransformador").innerText = "Debes seleccionar una opción";
         break;
     }
 };
@@ -40,7 +40,7 @@ function decimalABinario(){
     let numDecimal = parseInt(document.getElementById("inputTransformador").value);
     // Si no es un número válido
     if (isNaN(numDecimal)) {
-        document.getElementById("respuestaTransformador").innerText = "Ingrese un número válido";
+        document.getElementById("resultadoTransformador").innerText = "Ingrese un número válido";
         return;
     }
 
@@ -51,7 +51,7 @@ function decimalABinario(){
         numDecimal = Math.floor(numDecimal / 2);
     }
 
-    document.getElementById("respuestaTransformador").innerText = numBinario || "0"; // Si es 0, mostrar "0"
+    document.getElementById("resultadoTransformador").innerText = numBinario || "0"; // Si es 0, mostrar "0"
 }
 
 function binarioADecimal() {
@@ -65,7 +65,7 @@ function binarioADecimal() {
     while (binario > 0) {
         let digito = binario % 10;
         if (digito != 0 && digito != 1) {
-            document.getElementById("respuestaTransformador").innerText = "No es un número binario válido";
+            document.getElementById("resultadoTransformador").innerText = "No es un número binario válido";
             return;
         }
         // Convertir el dígito binario al valor decimal correspondiente
@@ -75,5 +75,5 @@ function binarioADecimal() {
         binario = Math.floor(binario / 10);
     }
     // Mostrar el resultado en el HTML
-    document.getElementById("respuestaTransformador").innerText = resultado;
+    document.getElementById("resultadoTransformador").innerText = resultado;
 }

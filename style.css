@@ -41,9 +41,9 @@ h2{
 #main-aplication {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
 }
-#left{
+#binarioDecimal{
     background-color: #f3f3f3;
     color: #000000;
     flex-grow: 1;
@@ -51,6 +51,17 @@ h2{
     border-radius: 15px;
     margin-left: 10px;
     padding: 20px; 
+}
+
+#binarioDecimal #inputTransformador{
+    margin: 20px 0 20px 0;
+    border: 2px solid #FF8E3C;
+    border-radius: 20px;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    background-color: #FFF5E1;
 }
 
 ul{
