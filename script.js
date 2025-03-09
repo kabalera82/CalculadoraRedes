@@ -77,3 +77,76 @@ function binarioADecimal() {
     // Mostrar el resultado en el HTML
     document.getElementById("resultadoTransformador").innerText = resultado;
 }
+
+function limpiarTransformador() {
+    document.getElementById("inputTransformador").value = "";
+    document.getElementById("resultadoTransformador").innerText = "Resultado";
+    let radios = document.querySelectorAll('input[name="transformador"]');
+    radios.forEach(radio => radio.checked = false);
+}
+
+let ip = [];
+let ipUsuario;
+
+//192.168.1.1
+
+function cogerIp(){
+    let posicion;
+    ipUsuario = document.getElementById("ip").value;
+    
+    posicion = ipUsuario.indexOf(".");
+
+    document.getElementById("prueba").innerText = ipUsuario.substring(0,posicion);
+}
+
+function anadirIp() {
+    let ip = document.getElementById("ip").value.trim().split(".");
+    return ip; // Devolvemos el array para usarlo en otras funciones
+}
+
+function ipValida() {
+    let ipUsuario = document.getElementById("ip").value.trim(); // Eliminar espacios extra
+    let puntos = 0;
+
+    // Verificar longitud válida de IP (mínimo 7 caracteres "0.0.0.0", máximo 15 "255.255.255.255")
+    if (ipUsuario.length > 15 || ipUsuario.length < 7) {
+        return false;
+    }
+
+    // Contar los puntos en la IP
+    for (let i = 0; i < ipUsuario.length; i++) {
+        if (ipUsuario.charAt(i) === ".") {
+            puntos++;
+        }
+    }
+
+    // Si tiene más o menos de 3 puntos, es inválida
+    if (puntos !== 3) {
+        return false;
+    }
+
+    let ip = anadirIp(); // Obtenemos el array de la IP
+    if (ip.length !== 4) {
+        return false;
+    }
+
+    // Verificar que cada parte de la IP está en el rango 0-255 y que tiene entre 1 y 3 dígitos
+    for (let i = 0; i < ip.length; i++) {
+        if (ip[i].length < 1 || ip[i].length > 3) {
+            return false;
+        }
+        let num = parseInt(ip[i]); // Convertimos a número
+        if (isNaN(num) || num < 0 || num > 255) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function prueba() {
+    if (ipValida()) {
+        document.getElementById("prueba").innerText = "V"; // Se corrigió el id "pruba" a "prueba"
+    } else {
+        document.getElementById("prueba").innerText = "F";
+    }
+}

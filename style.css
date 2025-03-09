@@ -82,11 +82,11 @@ strong{
     color:#1A2E35;
 }
 
-#host{
-    color:chartreuse
+.host{
+    color:#f08c00;
 }
-#red {
-    color:#FF8D5C
+.red {
+    color:#E16162;
 }
 
 #resultadoTransformador{
@@ -98,4 +98,17 @@ strong{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+button{
+    background-color: #078080;
+    color: #ffffff;
+    border: 0px;
+    padding: 8px;
+    border-radius: 15px;
+    width: 100px;
+}
+
+button:hover{
+    background-color: #FF8D5C;
 }

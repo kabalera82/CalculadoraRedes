@@ -14,7 +14,24 @@
         <div id="intro">
             <h2> Explicación</h2>
             <p> Los rangos de IP van desde <strong>0.0.0.0</strong> a <strong>255.255.255.255</strong> en este proyecto nos centramos únicamente en IPv4</p>
-            <p>En función de la IP se dividen en distintas clases que sirven para identificar su <strong>máscara de red.</strong> La máscara de red sirve para identificar qué parte de la IP pertenece a <strong id="red">red</strong> y qué parte a <strong id="host">host.</strong></p>
+            <p>En función de la IP se dividen en distintas clases que sirven para identificar su <strong>máscara de red.</strong> La máscara de red sirve para identificar qué parte de la IP pertenece a <strong class="red">red</strong> y qué parte a <strong class="host">host.</strong></p>
+            <h3>Clases de IP</h3>
+            <ul>
+                <li><strong>Clase A:</strong> rango de <strong class="red">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> a <strong class="red">127</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong></li>
+                    <ul>
+                        <li><strong>Máscara de red: </strong> <strong class="red">255</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong></li>
+                    </ul>
+                <li><strong>Clase B:</strong> rango de <strong class="red">128</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> a <strong class="red">191</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong></li>
+                    <ul>
+                        <li><strong>Máscara de red: </strong> <strong class="red">255</strong>.<strong class="host">255</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> </li>
+                    </ul>
+                <li><strong>Clase C:</strong> rango de <strong class="red">192</strong>.<strong class="host">0</strong>.<strong class="host">0</strong>.<strong class="host">0</strong> a <strong class="red">224</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong></li>
+                    <ul>
+                        <li><strong>Máscara de red: </strong> </strong> <strong class="red">255</strong>.<strong class="host">255</strong>.<strong class="host">255</strong>.<strong class="host">0</strong> </li>
+                    </ul>
+            </ul>
+            
+            
         </div>
         <div id="main-aplication">
             <div id="binarioDecimal">
@@ -23,14 +40,15 @@
                 <label for="rojo">Decimal a Binario</label>
                 <input type="radio" id="binarioDecimal" name="transformador" value="binarioDecimal">
                 <label for="azul">Binario a Decimal</label><br>
-                <input id="inputTransformador" type="number" name="transformador"><br>
-                <button onclick="transformar()">Apretar</button>
-                <strong><p id="resultadoTransformador">Ingresa un número</p></strong>
+                <input id="inputTransformador" type="number" name="transformador" placeholder="Introduce un número"><br>
+                <button onclick="transformar()">Calcular</button>
+                <button onclick="limpiarTransformador()">Limpiar</button>
+                <strong><p id="resultadoTransformador">Resultado</p></strong>
             </div>
             <div id="redes">
                 <label>IP: </label>
                 <input type="text" id="ip">
-                <button type="button" onclick="">Apretar</button>
+                <button type="button" onclick="prueba()">Apretar</button>
                 <button type="button" onclick="limpiarIp()">Limpiar</button>
                 <p id="prueba"></p>
             </div>
