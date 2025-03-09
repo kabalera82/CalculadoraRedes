@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de redes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de redes</h1>
+    </header>
+    <main>
+        <div id="intro">
+            <h2> Explicación</h2>
+            <p> Los rangos de IP van desde <strong>0.0.0.0</strong> a <strong>255.255.255.255</strong> en este proyecto nos centramos únicamente en IPv4</p>
+            <p>En función de la IP se dividen en distintas clases que sirven para identificar su <strong>máscara de red.</strong> La máscara de red sirve para identificar qué parte de la IP pertenece a <strong id="red">red</strong> y qué parte a <strong id="host">host.</strong></p>
+        </div>
+        <div id="main-aplication">
+            <div id="left">
+                <div id="binarioDecimal">
+                    <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario">
+                    <label for="rojo">Decimal a Binario</label>
+                    <input type="radio" id="binarioDecimal" name="transformador" value="binarioDecimal">
+                    <label for="azul">Binario a Decimal</label><br>
+                    <input id="inputTransformador" type="number" name="transformador"><br>
+                    <button onclick="transformar()">Apretar</button>
+                    <p id="prueba2"></p>
+                </div>
+                <div id="clasesDeIp">
+                    <ul>
+                        <li>Clase A</li>
+                        <li>Clase B</li>
+                        <li>Clase C</li>
+                        <li>Clase D</li>
+                        <li>Clase E</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="redes">
+                <label>IP: </label>
+                <input type="text" id="ip">
+                <button type="button" onclick="">Apretar</button>
+                <button type="button" onclick="limpiarIp()">Limpiar</button>
+                <p id="prueba"></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Desarrollado por: <a href="  ">Roberto Izquierdo</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
