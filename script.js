@@ -145,7 +145,7 @@ function ipValida() {
 
 function prueba() {
     if (ipValida()) {
-        document.getElementById("prueba").innerText = "V"; // Se corrigió el id "pruba" a "prueba"
+        document.getElementById("prueba").innerText = "V";
     } else {
         document.getElementById("prueba").innerText = "F";
     }
