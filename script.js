@@ -150,3 +150,4 @@ function prueba() {
         document.getElementById("prueba").innerText = "F";
     }
 }
+
