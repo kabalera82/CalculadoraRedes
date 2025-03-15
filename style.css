@@ -37,6 +37,9 @@ h2{
     margin-top: 0;
     font-size: 30px;
 }
+h3{
+    margin-top: 5px;
+}
 
 #main-aplication {
     display: flex;
@@ -53,15 +56,20 @@ h2{
     padding: 20px; 
 }
 
-#binarioDecimal #inputTransformador{
-    margin: 20px 0 20px 0;
+/* Estilo parar los inputs de los usuarios */
+.inputUsuarios{
     border: 2px solid #FF8E3C;
     border-radius: 20px;
-    width: 80%;
     font-size: 16px;
     padding: 5px;
     text-align: center;
     background-color: #FFF5E1;
+}
+
+/* Estilo para el input del transformador*/
+#inputTransformador{
+    margin: 20px 0 20px 0;
+    width: 80%;
 }
 
 ul{
@@ -112,3 +120,4 @@ button{
 button:hover{
     background-color: #FF8D5C;
 }
+

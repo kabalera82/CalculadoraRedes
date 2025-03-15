@@ -24,6 +24,7 @@ function transformar() {
     }
 };
 
+//Se po
 // Función para obtener el valor del radio seleccionado
 function radio() {
     let selectedRadio = document.querySelector('input[name="transformador"]:checked');
@@ -82,7 +83,7 @@ function limpiarTransformador() {
     document.getElementById("inputTransformador").value = "";
     document.getElementById("resultadoTransformador").innerText = "Resultado";
     let radios = document.querySelectorAll('input[name="transformador"]');
-    radios.forEach(radio => radio.checked = false);
+    //radios.forEach(radio => radio.checked = false); //Esta funcion deseleccionaba los radios. Al cambiar a uno por defecto, no es necesario reiniciarlo
 }
 
 let ip = [];
@@ -90,20 +91,26 @@ let ipUsuario;
 
 //192.168.1.1
 
+
+/*
+*Función que sirve para coger el primer numero introducido de la IP.
+*Por el momento no tiene uso.
+
 function cogerIp(){
     let posicion;
     ipUsuario = document.getElementById("ip").value;
-    
     posicion = ipUsuario.indexOf(".");
-
     document.getElementById("prueba").innerText = ipUsuario.substring(0,posicion);
 }
+*/
 
+//Funcion para la IP introduca por el usuario te lo devuelva en un Array.
 function anadirIp() {
     let ip = document.getElementById("ip").value.trim().split(".");
     return ip; // Devolvemos el array para usarlo en otras funciones
 }
 
+//Comprueba si la IP introducida es válida
 function ipValida() {
     let ipUsuario = document.getElementById("ip").value.trim(); // Eliminar espacios extra
     let puntos = 0;
@@ -143,11 +150,24 @@ function ipValida() {
     return true;
 }
 
+
+//Funcion para ejecutar el codigo y ver si la IP es valida.
+//En caso de ser válida la añade al array ip y lo imprime.
 function prueba() {
+    let tipoIp;
     if (ipValida()) {
-        document.getElementById("prueba").innerText = "V";
+        ip = anadirIp();
+        if(ip[0] < 128){
+            tipoIp = "clase A";
+        } else if (ip[0] < 192) {
+            tipoIp = "clase B"
+        } else {
+            tipoIp = "clase C"
+        }
+        document.getElementById("prueba").innerText = "La ip " + document.getElementById("ip").value + " es de " + tipoIp;
+
     } else {
-        document.getElementById("prueba").innerText = "F";
+        document.getElementById("prueba").innerText = "Tienes que introducir una IP válida. Por ejemplo: 192.168.1.1";
     }
 }
 

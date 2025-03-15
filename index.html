@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de redes</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -33,22 +34,25 @@
             
             
         </div>
+        <!--Zona boton transformación binario-->
         <div id="main-aplication">
             <div id="binarioDecimal">
                 <h3>Transformador Binario/Decimal</h3>
-                <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario">
+            <!--Valorar marcar una opcion por defecto "checked" -->
+                <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario" checked>
                 <label for="rojo">Decimal a Binario</label>
                 <input type="radio" id="binarioDecimal" name="transformador" value="binarioDecimal">
                 <label for="azul">Binario a Decimal</label><br>
-                <input id="inputTransformador" type="number" name="transformador" placeholder="Introduce un número"><br>
+                <input id="inputTransformador" class="inputUsuarios" type="number" name="transformador" placeholder="Introduce un número"><br>
                 <button onclick="transformar()">Calcular</button>
                 <button onclick="limpiarTransformador()">Limpiar</button>
                 <strong><p id="resultadoTransformador">Resultado</p></strong>
             </div>
             <div id="redes">
-                <label>IP: </label>
-                <input type="text" id="ip">
-                <button type="button" onclick="prueba()">Apretar</button>
+                <h3>Calculadora de redes</h3>
+                <p>Introduce una IP para mostrarte su tipo.</p>
+                <input type="text" class="inputUsuarios" id="ip" placeholder="Introduce una IP">
+                <button type="button" onclick="prueba()">Calcular</button>
                 <button type="button" onclick="limpiarIp()">Limpiar</button>
                 <p id="prueba"></p>
             </div>
@@ -57,6 +61,5 @@
     <footer>
         <p>Desarrollado por: <a href="  ">Roberto Izquierdo</a></p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
