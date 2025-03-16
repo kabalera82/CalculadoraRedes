@@ -36,7 +36,7 @@
         </div>
         <!--Zona boton transformación binario-->
         <div id="main-aplication">
-            <div id="binarioDecimal">
+            <div id="tranformadorBinarioDecimal">
                 <h3>Transformador Binario/Decimal</h3>
             <!--Valorar marcar una opcion por defecto "checked" -->
                 <input type="radio" id="decimalBinario" name="transformador" value="decimalBinario" checked>
@@ -48,13 +48,13 @@
                 <button onclick="limpiarTransformador()">Limpiar</button>
                 <strong><p id="resultadoTransformador">Resultado</p></strong>
             </div>
-            <div id="redes">
+            <div id="calculadoraRedes">
                 <h3>Calculadora de redes</h3>
                 <p>Introduce una IP para mostrarte su tipo.</p>
                 <input type="text" class="inputUsuarios" id="ip" placeholder="Introduce una IP">
-                <button type="button" onclick="prueba()">Calcular</button>
+                <button type="button" onclick="mostrarIpYTipo()">Calcular</button>
                 <button type="button" onclick="limpiarIp()">Limpiar</button>
-                <p id="prueba"></p>
+                <p id="resultadoTipoIp"></p>
             </div>
         </div>
     </main>

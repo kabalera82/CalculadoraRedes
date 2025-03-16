@@ -1,31 +1,15 @@
+
+/* ************************************************************************************
+
+************* OBSOLETAS *************
+
 function mostrarIp() {
     let ip = document.getElementById("ip").value;
-    document.getElementById("prueba").innerText = "La IP es " + ip;
+    document.getElementById("resultadoTipoIp").innerText = "La IP es " + ip;
 }
 
-function limpiarIp() {
-    document.getElementById("prueba").innerText = "";
-}
+* Función para comprobar si el radio está marcado y coger su valor
 
-// Función para transformar de decimal a binario
-function transformar() {
-    let opcion = radio();  // Llamamos a la función radio() para obtener la opción seleccionada
-    
-    switch (opcion) {
-        case "decimalBinario":
-            decimalABinario();
-        break;
-        case "binarioDecimal":
-            binarioADecimal();
-        break;
-        case null:
-            document.getElementById("resultadoTransformador").innerText = "Debes seleccionar una opción";
-        break;
-    }
-};
-
-//Se po
-// Función para obtener el valor del radio seleccionado
 function radio() {
     let selectedRadio = document.querySelector('input[name="transformador"]:checked');
     if (selectedRadio) {
@@ -35,6 +19,42 @@ function radio() {
         return null;  // Devuelve null si no hay radio seleccionado
     }
 }
+
+
+*Función que sirve para coger el primer numero introducido de la IP.
+function cogerIp(){
+    let posicion;
+    ipUsuario = document.getElementById("ip").value;
+    posicion = ipUsuario.indexOf(".");
+    document.getElementById("resultadoTipoIp").innerText = ipUsuario.substring(0,posicion);
+}
+
+
+
+**********************************************************************************************/
+
+
+function limpiarIp() {
+    document.getElementById("resultadoTipoIp").innerText = "";
+}
+
+// Función para transformar de decimal a binario
+function transformar() {
+    let selectedRadio = document.querySelector('input[name="transformador"]:checked');
+    // Obtener el valor del radio seleccionado o null si no hay selección
+    let opcion = selectedRadio ? selectedRadio.value : null;      
+    switch (opcion) {
+        case "decimalBinario":
+            decimalABinario();
+            break;
+        case "binarioDecimal":
+            binarioADecimal();
+            break;                
+        default:// Si no se selecciona ninguna opción.  
+            document.getElementById("resultadoTransformador").innerText = "Debes seleccionar una opción";
+            break;
+    }
+};
 
 
 function decimalABinario(){
@@ -61,7 +81,10 @@ function binarioADecimal() {
     let potencia = 0;
 
     binario = parseInt(document.getElementById("inputTransformador").value);
-
+    if (isNaN(binario)) {
+        document.getElementById("resultadoTransformador").innerText = "Ingrese un número válido";
+        return;
+    }
     // Verificar si el número es un binario válido (solo contiene 0s y 1s)
     while (binario > 0) {
         let digito = binario % 10;
@@ -88,21 +111,6 @@ function limpiarTransformador() {
 
 let ip = [];
 let ipUsuario;
-
-//192.168.1.1
-
-
-/*
-*Función que sirve para coger el primer numero introducido de la IP.
-*Por el momento no tiene uso.
-
-function cogerIp(){
-    let posicion;
-    ipUsuario = document.getElementById("ip").value;
-    posicion = ipUsuario.indexOf(".");
-    document.getElementById("prueba").innerText = ipUsuario.substring(0,posicion);
-}
-*/
 
 //Funcion para la IP introduca por el usuario te lo devuelva en un Array.
 function anadirIp() {
@@ -153,7 +161,7 @@ function ipValida() {
 
 //Funcion para ejecutar el codigo y ver si la IP es valida.
 //En caso de ser válida la añade al array ip y lo imprime.
-function prueba() {
+function mostrarIpYTipo() {
     let tipoIp;
     if (ipValida()) {
         ip = anadirIp();
@@ -164,10 +172,10 @@ function prueba() {
         } else {
             tipoIp = "clase C"
         }
-        document.getElementById("prueba").innerText = "La ip " + document.getElementById("ip").value + " es de " + tipoIp;
+        document.getElementById("resultadoTipoIp").innerHTML = `La ip <strong>${document.getElementById("ip").value}</strong> es de ${tipoIp}`;
 
     } else {
-        document.getElementById("prueba").innerText = "Tienes que introducir una IP válida. Por ejemplo: 192.168.1.1";
+        document.getElementById("resultadoTipoIp").innerText = "Tienes que introducir una IP válida. Por ejemplo: 192.168.1.1";
     }
 }
 
