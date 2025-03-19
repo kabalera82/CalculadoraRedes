@@ -33,7 +33,7 @@ function cogerIp(){
 
 **********************************************************************************************/
 
-
+// Función para limpiar el resultado de la IP y el tipo de IP en el HTML.
 function limpiarIp() {
     document.getElementById("resultadoTipoIp").innerText = "";
 }
@@ -56,7 +56,7 @@ function transformar() {
     }
 };
 
-
+// Función para transformar de decimal a binario y mostrar el resultado en el HTML
 function decimalABinario(){
     let numDecimal = parseInt(document.getElementById("inputTransformador").value);
     // Si no es un número válido
@@ -75,6 +75,7 @@ function decimalABinario(){
     document.getElementById("resultadoTransformador").innerText = numBinario || "0"; // Si es 0, mostrar "0"
 }
 
+// Función para transformar de binario a decimal y mostrar el resultado en el HTML 
 function binarioADecimal() {
     let binario;
     let resultado = 0;
@@ -102,6 +103,7 @@ function binarioADecimal() {
     document.getElementById("resultadoTransformador").innerText = resultado;
 }
 
+// Función para limpiar el input y el resultado del transformador en el HTML
 function limpiarTransformador() {
     document.getElementById("inputTransformador").value = "";
     document.getElementById("resultadoTransformador").innerText = "Resultado";
